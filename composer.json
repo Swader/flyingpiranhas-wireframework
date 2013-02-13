@@ -1,0 +1,8 @@
+{
+"require": {
+	"flyingpiranhas/common": "dev-master",
+	"flyingpiranhas/mailer": "dev-master",
+	"flyingpiranhas/mvc": "dev-master",
+	"flyingpiranhas/forms" : "dev-master"
+	}
+}
