@@ -1,4 +1,5 @@
-###Flyingpiranhas Wireframework
+###Flyingpiranhas Wireframework v0.1
+####Please note that this is a first experimental build. Use at your own risk. The project is in its infancy, and even though we have built several production sites with it, we do not recommend you use it because we haven't thoroughly tested.
 
 ####Introduction
 This is a skeleton application called the Flyingpiranhas Wireframework or WFW. When you download and unzip it, run composer install inside the folder to fetch the latest versions of required libraries and start working.
@@ -12,8 +13,9 @@ The WFW comes with HTML5 Boilerplate and Twitter Bootstrap both built into its l
 ####Installation
 - Unzip
 - Run "composer install"
+- Go to application/config and change the database params to match yours
 - Point vhost to public folder and make sure mod_rewrite is on
-- Give PHP write permissions to the logs folder in the project root
+- Give PHP write permissions to the following folders: public/assets/minify, application/cache, application/logs, data/uploads
 - Develop!
 
 ####Git

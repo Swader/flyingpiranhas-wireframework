@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">CI++</a>
+            <a class="brand" href="#">FP Wireframework!</a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
@@ -42,23 +42,8 @@
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
-        <p>CI++ is an upgraded CodeIgniter skeleton application with added layouting,
-            widget and helper capabilities, and with integrated HTML5 Boilerplate and Twitter Bootstrap. It also
-            features examples of these implementations but for more information, you should probably read the <a
-                    href="http://www.bitfalls.com/2013/01/ci-codeigniter-with-html5-boilerplate.html"
-                    title="CI++ - CodeIgniter with layouts, H5BP and Bootstrap">blog post in which it is explained</a>.
-        </p>
-        <p>A prepared database demo is available, too. See models/test_model, and run createTable() to create the
-            test table (see the demo method of the welcome controller), but not before you set your DB up as per
-            information in the config/database.php file!</p>
-        <p>Read the classes for in-depth documentation, it's all there. Also, after you install the table, you can
-            try out the URL demo in which one url fetches one value from the DB, and another fetches a different value,
-            and the only difference is one param. The links for this are here (pay attention to the URLs):</p>
-        <p>
-            <a href="/welcome/urldemo/param/1" title="Getting value 1 from DB table">Get value 1 from db table.</a>
-        </p>
-        <p>
-            <a href="/welcome/urldemo/param/2" title="Getting value 1 from DB table">Get value 2 from db table.</a>
+        <div class="alert alert-success"><?php echo $this->message; ?></div>
+        <p>Description
         </p>
     </div>
 
@@ -67,34 +52,24 @@
         <div class="span4">
             <h2>Layout Fragments</h2>
 
-            <p>This is a layout fragment. It can be found in views/layout/default/fragments/leftbox.php. They are useful as theme
-                widgets and helpers - for example, when adding a common header to every page.</p>
-            <p>Here's some proof of concept that tags work. Rendering title: Change the title in application/config/config</p>
-            <p><a class="btn" href="#">View details</a></p>
+            <p>Needs demo and description</p>
         </div>
         <div class="span4">
             <h2>View Fragments</h2>
 
-            <p>Essentially identical to layout fragments, these are found in views/fragments, or wherever you
-                define the view fragments folder should be. It can be changed in constants.php, under config.</p>
-            <p>I will also render the title :) Title: Change the title in application/config/config</p>
-            <p><a class="btn" href="#">View details</a></p>
+            <p>Needs demo and description</p>
         </div>
         <div class="span4">
             <h2>Layouts</h2>
 
-            <p>To switch out a layout, simply copy the default one and change what you want. It's hard coded to use
-                Twitter Bootstrap and HTML5 Boilerplate, but that's all editable. I might add a dynamic asset manager
-                for easier dealing with JS and CSS files soon, but a big emphasis on "might".</p>
-
-            <p><a class="btn" href="#">View details</a></p>
+            <p>Description</p>
         </div>
     </div>
 
     <hr>
 
     <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Company <?php echo date('Y'); ?></p>
     </footer>
 
 </div> <!-- /container -->

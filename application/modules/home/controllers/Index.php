@@ -26,6 +26,7 @@
             $oView = new View;
             $oView->setLayout('default');
             $this->getHead()->setTitle($this->getHead()->getTitle().' - Hello!');
+            $oView->addViewData('message', 'Looks like everything is running fine!');
             return $oView;
         }
 
