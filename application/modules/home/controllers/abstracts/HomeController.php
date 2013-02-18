@@ -4,6 +4,7 @@
     namespace home\controllers\abstracts;
 
     use flyingpiranhas\mvc\controller\abstracts\ControllerAbstract;
+    use flyingpiranhas\mvc\views\interfaces\ViewInterface;
     use app\Settings;
     use flyingpiranhas\common\utils\Debug;
 
@@ -20,6 +21,9 @@
         /** @var Settings */
         protected $oSettings;
 
+        /** @var ViewInterface */
+        protected $oView;
+
         /**
          * The constructor of the controller denotes the app\Settings class as a
          * parameter it depends on. This class is registered as a shared resource in the
@@ -32,6 +36,23 @@
             $this->oSettings = $oSettings;
         }
 
+        /**
+         * @return \flyingpiranhas\mvc\views\View
+         */
+        public function getView() {
+            return $this->oView;
+        }
+
+        /**
+         * @dependency
+         * @param \flyingpiranhas\mvc\views\interfaces\ViewInterface $oView
+         *
+         * @return HomeController
+         */
+        public function setView(ViewInterface $oView) {
+            $this->oView = $oView;
+            return $this;
+        }
 
         /**
          * Executed before any action
@@ -83,11 +104,17 @@
                 ->setTitle($this->oSettings->title ? $this->oSettings->title : 'Some title')
                 ->setMinifyDir('assets/minify');
 
+            $this->getView()->setLayout('stickyFooter');
+
             /**
              * These stylesheets and scripts will automatically get minified.
              * Only when a change is detected in one of the original files will they be re-minified, so
              * you can be sure this only happens once and loads the minified cached copy every time.
+             *
+             * They can also be added exactly the same in the layout itself (see for yourself)!
              */
+
+            /*
             $this->getHead()
                 ->appendStylesheet('/assets/css/bootstrap.min.css')
                 ->appendStylesheet('/assets/css/bootstrap-responsive.min.css')
@@ -95,6 +122,6 @@
                 ->appendScript('/assets/js/vendor/bootstrap.min.js')
                 ->appendScript('/assets/js/plugins.js')
                 ->appendScript('/assets/js/main.js');
-
+            */
         }
     }

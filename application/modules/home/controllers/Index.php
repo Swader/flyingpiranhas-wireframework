@@ -3,9 +3,7 @@
     /** Modules have namespaces. This is to ensure uniqueness and easy sharing. */
     namespace home\controllers;
 
-    use flyingpiranhas\mvc\controller\abstracts\ControllerAbstract;
     use home\controllers\abstracts\HomeController;
-    use app\Settings;
     use flyingpiranhas\mvc\views\View;
     use flyingpiranhas\common\utils\Debug;
 
@@ -23,11 +21,29 @@
          */
         public function indexAction()
         {
-            $oView = new View;
-            $oView->setLayout('default');
+            $this->getView()->setLayout('default');
             $this->getHead()->setTitle($this->getHead()->getTitle().' - Hello!');
-            $oView->addViewData('message', 'Looks like everything is running fine!');
-            return $oView;
+            $this->getView()->addViewData('message',
+                'Looks like everything is running fine! This action is in the Index controller of
+                the Home module, and forces the layout to be "default". If you go to
+                <a href="/home/index/sticky">Sticky Action</a> you get to see the sticky-footer layout
+                which is forced in the HomeController controller in the Home
+                module under controllers/abstracts.'
+            );
+            return $this->getView();
+        }
+
+        /**
+         * @return View
+         */
+        public function stickyAction() {
+            $this->getHead()->appendTitle('Sticky Action!');
+            $this->getView()->addViewData('message',
+                'Looks like everything is running fine! This action is in the Index controller of
+                the Home module. If you go to <a href="/">home/index/index</a> you get to see the default
+                layout in use.'
+            );
+            return $this->getView();
         }
 
     }

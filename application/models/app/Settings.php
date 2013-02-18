@@ -34,7 +34,7 @@
          */
         public function installTable($bDropIfExists = true)
         {
-            $sQuery = ($bDropIfExists) ? 'DROP TABLE IF EXISTS `' . $this->sTableName . '`' : '';
+            $sQuery = ($bDropIfExists) ? 'DROP TABLE IF EXISTS `' . $this->sTableName . '`;' : ';';
             $sQuery .= 'CREATE TABLE IF NOT EXISTS `' . $this->sTableName . '` (
               `key` varchar(30) NOT NULL,
               `value` text,

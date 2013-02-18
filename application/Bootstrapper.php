@@ -42,7 +42,18 @@
         {
             $this
                 ->register_siteSettings()
-                ->register_cache();
+                ->register_cache()
+                ->register_view();
+        }
+
+        private function register_view()
+        {
+            $this->oDIContainer->registerClass(
+                '\\flyingpiranhas\\mvc\\views\\View',
+                '\\flyingpiranhas\\mvc\\views\\interfaces\\ViewInterface',
+                DIContainer::NEW_INSTANCE
+            );
+            return $this;
         }
 
         /**
@@ -58,6 +69,7 @@
             $oConfiguration = new ConfigRoot($this->sAppEnv, getcwd() . '/../application/config/Config.ini');
             //Debug::vddp($oConfiguration->toArray()['db']['mysql']);
             $oSettingsDb = new Settings($oConfiguration->toArray()['db']['mysql']);
+            $oSettingsDb->installTable();
             $oSettingsDb->loadSettings();
             $this->oDIContainer->registerInstance(
                 $oSettingsDb,

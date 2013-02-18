@@ -1,4 +1,5 @@
 <?php
+    //die("here");
 
     ini_set('xdebug.show_mem_delta', 'Off');
     ini_set('xdebug.trace_format', '2');
@@ -17,7 +18,6 @@ set_include_path(
         . PATH_SEPARATOR . $sProjectDir . '/application/models'
         . PATH_SEPARATOR . $sProjectDir . '/application/modules'
 );
-
 /**
  * We now include Composer's autoloader and tell it to PSR autoload the include path
  * @var $oLoader Composer\Autoload\ClassLoader
